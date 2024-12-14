@@ -1,0 +1,80 @@
+<!--&lt;!&ndash;<?xml version="1.0" encoding="UTF-8"?>&ndash;&gt;-->
+<!--&lt;!&ndash;<metrics>&ndash;&gt;-->
+<!--&lt;!&ndash;    <reddit>&ndash;&gt;-->
+<!--&lt;!&ndash;        <active-users>10</active-users>&ndash;&gt;-->
+<!--&lt;!&ndash;        <simulated-users>10</simulated-users>&ndash;&gt;-->
+<!--&lt;!&ndash;        <total-users>10</total-users>&ndash;&gt;-->
+<!--&lt;!&ndash;        <posts>0</posts>&ndash;&gt;-->
+<!--&lt;!&ndash;        <comments>0</comments>&ndash;&gt;-->
+<!--&lt;!&ndash;        <votes>0</votes>&ndash;&gt;-->
+<!--&lt;!&ndash;        <error-rate>0</error-rate>&ndash;&gt;-->
+<!--&lt;!&ndash;    </reddit>&ndash;&gt;-->
+<!--&lt;!&ndash;</metrics>&ndash;&gt;-->
+
+<!--        &lt;!&ndash; metrics.html &ndash;&gt;-->
+
+<html>
+<!--<head>-->
+<!--    <title>Reddit Clone Metrics</title>-->
+<!--    <style>-->
+<!--        body { font-family: Arial, sans-serif; margin: 20px; }-->
+<!--        .metric {-->
+<!--        padding: 10px;-->
+<!--        margin: 5px;-->
+<!--        border: 1px solid #ddd;-->
+<!--        border-radius: 4px;-->
+<!--        }-->
+<!--        .value { font-weight: bold; }-->
+<!--        .timestamp { color: #666; font-size: 0.8em; }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Reddit Clone Metrics</h1>-->
+<!--    <div id="metrics"></div>-->
+
+<!--    <script>-->
+<!--        function updateMetrics() {-->
+<!--        fetch('http://localhost:2112/metrics')-->
+<!--        .then(response => response.text())-->
+<!--        .then(text => {-->
+<!--        const metrics = parseMetrics(text);-->
+<!--        displayMetrics(metrics);-->
+<!--        });-->
+<!--        }-->
+
+<!--        function parseMetrics(text) {-->
+<!--        const lines = text.split('\n');-->
+<!--        const metrics = {};-->
+
+<!--        for (const line of lines) {-->
+<!--        if (line.startsWith('reddit_')) {-->
+<!--        const parts = line.split(' ');-->
+<!--        if (parts.length === 2) {-->
+<!--        metrics[parts[0]] = parts[1];-->
+<!--        }-->
+<!--        }-->
+<!--        }-->
+<!--        return metrics;-->
+<!--        }-->
+
+<!--        function displayMetrics(metrics) {-->
+<!--        const container = document.getElementById('metrics');-->
+<!--        container.innerHTML = '';-->
+
+<!--        for (const [key, value] of Object.entries(metrics)) {-->
+<!--        container.innerHTML += `-->
+<!--        <div class="metric">-->
+<!--            <div class="name">${key}</div>-->
+<!--            <div class="value">${value}</div>-->
+<!--            <div class="timestamp">${new Date().toLocaleTimeString()}</div>-->
+<!--        </div>-->
+<!--        `;-->
+<!--        }-->
+<!--        }-->
+
+<!--        // Update every 5 seconds-->
+<!--        setInterval(updateMetrics, 5000);-->
+<!--        updateMetrics(); // Initial update-->
+<!--    </script>-->
+<!--</body>-->
+</html>
